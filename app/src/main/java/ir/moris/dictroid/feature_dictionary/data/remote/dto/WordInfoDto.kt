@@ -1,5 +1,6 @@
 package ir.moris.dictroid.feature_dictionary.data.remote.dto
 
+import ir.moris.dictroid.feature_dictionary.data.local.entity.WordInfoEntity
 import ir.moris.dictroid.feature_dictionary.domain.model.WordInfo
 
 data class WordInfoDto(
@@ -9,7 +10,8 @@ data class WordInfoDto(
     val phonetics: List<PhoneticDto>,
     val word: String
 ){
-    fun toWordInfo():WordInfo{
-        return WordInfo(meanings.map { it.toMeaning() }, origin, phonetic, word)
+    fun toWordInfoEntity():WordInfoEntity{
+        return WordInfoEntity(meanings.map { it.toMeaning() }, origin, phonetic, word)
     }
+
 }
